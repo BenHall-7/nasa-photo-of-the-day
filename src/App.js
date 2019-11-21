@@ -36,15 +36,15 @@ function App() {
     if (API_data[dateString] !== undefined) {
       chooseCard(API_data[dateString]);
     } else {
-      // axios.get(`https://api.nasa.gov/planetary/apod?api_key=${key}&date=${dateString}`)
-      //   .then(response => {
-      //     API_data[dateString] = response.data;
-      //     chooseCard(response.data);
-      //   })
-      //   .catch(err => {
-      //     console.log("ERROR:");
-      //     console.log(err);
-      //   });
+      axios.get(`https://api.nasa.gov/planetary/apod?api_key=${key}&date=${dateString}`)
+        .then(response => {
+          API_data[dateString] = response.data;
+          chooseCard(response.data);
+        })
+        .catch(err => {
+          console.log("ERROR:");
+          console.log(err);
+        });
     }
   };
 
@@ -54,7 +54,7 @@ function App() {
     <div className="App">  
       <SingleDatePicker
         selected={date}
-        onChange={date => setDate(date)}
+        onChange={setDate}
         maxDate={today}/>
       {card}
     </div>

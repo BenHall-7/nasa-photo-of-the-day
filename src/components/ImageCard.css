@@ -1,0 +1,11 @@
+.ImageCard {
+    background: white;
+    box-shadow: 1px 1px 0 grey;
+    margin: 20px 0;
+}
+
+.ImageCard img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
