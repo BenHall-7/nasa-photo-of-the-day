@@ -24,7 +24,6 @@ function App() {
     if (data.media_type === "image") {
       setCard(<ImageCard data={data}/>);
     } else if (data.media_type === "video") {
-      console.log(data);
       setCard(<VideoCard data={data}/>);
     } else {
       setCard(<EmptyCard data={data}/>);
