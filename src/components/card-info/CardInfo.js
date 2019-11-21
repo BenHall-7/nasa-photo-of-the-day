@@ -10,7 +10,7 @@ function CardInfo(props) {
                 </p>
                 : null}
             <h1>{props.data.title}</h1>
-            <p class="description">{props.data.explanation}</p>
+            <p className="description">{props.data.explanation}</p>
         </div>
     )
 }

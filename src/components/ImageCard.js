@@ -5,7 +5,7 @@ import "./ImageCard.css"
 function ImageCard(props) {
     return (
         <div className="ImageCard">
-            <img src={props.data.url}/>
+            <img src={props.data.url} alt={props.data.title}/>
             <CardInfo data={props.data}/>
         </div>
     )

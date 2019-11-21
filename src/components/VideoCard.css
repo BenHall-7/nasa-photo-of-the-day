@@ -1,0 +1,9 @@
+.VideoCard {
+    background: white;
+    box-shadow: 1px 1px 0 grey;
+    margin: 20px 0;
+}
+
+.VideoCard .player {
+    margin: 20px auto;
+}

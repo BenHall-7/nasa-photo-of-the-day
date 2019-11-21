@@ -11,7 +11,7 @@ import EmptyCard from './components/EmptyCard';
 const key = "0H0iKAUIhI4xkJoFy3n4zpA9jShPiVX2L7EzBAJb";
 let API_data = {};
 
-const formatDate = date => `${date.getFullYear()}-${date.getUTCMonth() + 1}-${date.getDate()}`;
+const formatDate = date => `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
 function App() {
   const today = new Date();
@@ -24,6 +24,7 @@ function App() {
     if (data.media_type === "image") {
       setCard(<ImageCard data={data}/>);
     } else if (data.media_type === "video") {
+      console.log(data);
       setCard(<VideoCard data={data}/>);
     } else {
       setCard(<EmptyCard data={data}/>);
@@ -33,7 +34,7 @@ function App() {
   const changeDateState = () => {
     let dateString = formatDate(date);
     
-    if (API_data[dateString] !== undefined) {
+    if (API_data[dateString]) {
       chooseCard(API_data[dateString]);
     } else {
       axios.get(`https://api.nasa.gov/planetary/apod?api_key=${key}&date=${dateString}`)
