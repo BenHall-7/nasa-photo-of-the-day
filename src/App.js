@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import "./App.css";
 import SingleDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
@@ -50,15 +49,22 @@ function App() {
   };
 
   useEffect(changeDateState, [date]);
+
+  let AppContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10%;
+  `;
   
   return (
-    <div className="App">  
+    <AppContainer>  
       <SingleDatePicker
         selected={date}
         onChange={setDate}
         maxDate={today}/>
       {card}
-    </div>
+    </AppContainer>
   );
 }
 
