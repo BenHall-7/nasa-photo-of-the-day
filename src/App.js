@@ -56,10 +56,17 @@ function App() {
     align-items: center;
     padding: 10px 10%;
   `;
+
+  let DatePicker = styled(SingleDatePicker)`
+    padding: 10px;
+    border: 2px solid maroon;
+    border-radius: 4px;
+    width: 200px;
+  `;
   
   return (
     <AppContainer>  
-      <SingleDatePicker
+      <DatePicker
         selected={date}
         onChange={setDate}
         maxDate={today}/>
