@@ -1,5 +1,4 @@
 import React from 'react';
-import "./CardInfo.css";
 import styled from 'styled-components';
 
 function CardInfo(props) {
