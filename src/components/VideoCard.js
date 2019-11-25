@@ -1,15 +1,24 @@
 import React from "react";
 import CardInfo from "./card-info/CardInfo";
 import ReactPlayer from "react-player";
-import "./VideoCard.css";
+import styled from "styled-components";
 
 function VideoCard(props) {
+    let VideoCard = styled.div`
+        background: white;
+        box-shadow: 1px 1px 0 grey;
+        margin: 20px 0;
+    `;
+
+    let Player = styled(ReactPlayer)`
+        margin: 20px auto;
+    `;
+
     return (
-        <div className="VideoCard">
-            <ReactPlayer className="player"
-                url={props.data.url}/>
+        <VideoCard>
+            <Player url={props.data.url}/>
             <CardInfo data={props.data}/>
-        </div>
+        </VideoCard>
     )
 }
 
