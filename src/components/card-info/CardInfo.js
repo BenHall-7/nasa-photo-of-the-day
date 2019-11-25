@@ -1,17 +1,33 @@
 import React from 'react';
 import "./CardInfo.css";
+import styled from 'styled-components';
 
 function CardInfo(props) {
+    let CardInfo = styled.div`
+        padding: 0 30px 20px;
+    `;
+
+    let CopyRight = () => {
+        if (props.data.copyright) {
+            const Ret = styled.p`
+                text-align: right;
+            `;
+            return (
+                <Ret>
+                    © {props.data.copyright}
+                </Ret>
+            )
+        } else {
+            return null;
+        }
+    }
+
     return (
-        <div className="CardInfo">
-            {props.data.copyright ?
-                <p className="copyright">
-                    {`© ${props.data.copyright}`}
-                </p>
-                : null}
+        <CardInfo>
+            <CopyRight/>
             <h1>{props.data.title}</h1>
             <p className="description">{props.data.explanation}</p>
-        </div>
+        </CardInfo>
     )
 }
 
